@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
+import api from "../services/api"
 import {
   useNavigate,
   Link
@@ -33,7 +33,7 @@ function Register() {
       setError("");
 
       await axios.post(
-        "http://localhost:5000/api/auth/register",
+        "https://lead-management-crm-02bs.onrender.com/auth/register",
         form
       );
 
