@@ -28,11 +28,12 @@ function Register() {
     e.preventDefault();
 
     try {
+      console.log("button clicked")
 
       setLoading(true);
       setError("");
 
-      await axios.post(
+      await api.post(
         "/auth/register",
         form
       );
@@ -40,7 +41,7 @@ function Register() {
       navigate("/");
 
     } catch (err) {
-
+      console.log(err)
       setError(
         err.response?.data?.message ||
         "Registration failed"
