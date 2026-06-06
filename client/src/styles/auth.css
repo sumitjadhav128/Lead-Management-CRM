@@ -1,0 +1,150 @@
+/* ==========================================================================
+   Auth Layout Properties & Variables
+   ========================================================================== */
+:root {
+  --auth-bg-primary: #f8fafc;
+  --auth-bg-surface: #ffffff;
+  --auth-text-main: #0f172a;
+  --auth-text-muted: #64748b;
+  --auth-brand-primary: #4f46e5;
+  --auth-brand-hover: #4338ca;
+  --auth-danger: #ef4444;
+  --auth-border-color: #e2e8f0;
+  --auth-radius-lg: 12px;
+  --auth-radius-md: 8px;
+  --auth-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+  --auth-transition: all 0.2s ease-in-out;
+}
+
+/* Base structural wrapper centering the authentication card */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--auth-bg-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   Auth Card Component Architecture
+   ========================================================================== */
+.auth-card {
+  background-color: var(--auth-bg-surface);
+  border: 1px solid var(--auth-border-color);
+  border-radius: var(--auth-radius-lg);
+  padding: 2.5rem 2.25rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: var(--auth-shadow-xl);
+  box-sizing: border-box;
+}
+
+.auth-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--auth-text-main);
+  text-align: center;
+  margin: 0 0 1.75rem 0;
+  letter-spacing: -0.025em;
+}
+
+/* Form block architecture spacing elements apart */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* ==========================================================================
+   Form Fields, Alerts and Component Modifiers
+   ========================================================================== */
+.auth-input {
+  width: 100%;
+  height: 46px;
+  box-sizing: border-box;
+  padding: 0 1rem;
+  font-size: 0.875rem;
+  color: var(--auth-text-main);
+  background-color: var(--auth-bg-primary);
+  border: 1px solid var(--auth-border-color);
+  border-radius: var(--auth-radius-md);
+  outline: none;
+  transition: var(--auth-transition);
+}
+
+.auth-input:focus {
+  border-color: var(--auth-brand-primary);
+  background-color: var(--auth-bg-surface);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+.auth-input::placeholder {
+  color: var(--auth-text-muted);
+  opacity: 0.8;
+}
+
+/* Error banner style block */
+.auth-error {
+  background-color: #fef2f2;
+  border: 1px solid #fca5a5;
+  color: var(--auth-danger);
+  border-radius: var(--auth-radius-md);
+  padding: 0.75rem 1rem;
+  font-size: 0.815rem;
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+
+/* Primary Form Action Button CTA */
+.auth-btn {
+  width: 100%;
+  height: 46px;
+  background-color: var(--auth-brand-primary);
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--auth-radius-md);
+  cursor: pointer;
+  transition: var(--auth-transition);
+  margin-top: 0.25rem;
+}
+
+.auth-btn:hover:not(:disabled) {
+  background-color: var(--auth-brand-hover);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+}
+
+/* Disabled/Loading interactive visual states */
+.auth-btn:disabled {
+  background-color: #94a3b8;
+  color: #f1f5f9;
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+/* ==========================================================================
+   Footer Component Layout
+   ========================================================================== */
+.auth-footer {
+  margin-top: 1.75rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--auth-text-muted);
+}
+
+.auth-link {
+  color: var(--auth-brand-primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--auth-transition);
+}
+
+.auth-link:hover {
+  color: var(--auth-brand-hover);
+  text-decoration: underline;
+}
