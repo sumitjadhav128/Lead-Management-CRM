@@ -33,7 +33,7 @@ function Register() {
       setError("");
 
       await axios.post(
-        "https://lead-management-crm-02bs.onrender.com/auth/register",
+        "/auth/register",
         form
       );
 
